@@ -9,7 +9,7 @@ pipeline{
         stage("Create Image"){
             steps{
                 sh '''
-                docker build -t nadiasfs/cloud_kelompok2:v1 .
+                docker build -t roymalau/rdam_jenkins:v1 .
                 '''
             }
         }
@@ -17,9 +17,9 @@ pipeline{
             steps{
                 sh '''
                 set +x
-                docker login --username=nadiasfs --password=$kelompok2
+                docker login --username=roymalau --password=$rdam
                 set -x
-                docker push nadiasfs/cloud_kelompok2:v1
+                docker push roymalau/rdam_jenkins:v1
                 '''
             }
         }
