@@ -13,6 +13,13 @@ pipeline{
                 '''
             }
         }
+        stage("Create Container"){
+            steps{
+                sh '''
+                docker run -d --name container1 -p 8081:80 roymalau/rdam_jenkins:v1
+                '''
+            }
+        }
         stage("Push Image"){
             steps{
                 sh '''
